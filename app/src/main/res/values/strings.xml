@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">beginerAndroid</string>
+    <string name="hasil">Hasil</string>
+    <string name="tinggi">Tinggi</string>
+    <string name="lebar">Lebar</string>
+    <string name="panjang">Panjang</string>
+    <string name="calculate">Hitung</string>
+    <string name="masukkan_nilai_panjang">Masukkan nilai panjang</string>
+    <string name="masukkan_nilai_lebar">Masukkan nilai lebar</string>
+    <string name="masukkan_nilai_tinggi">Masukkan nilai tinggi</string>
+    <string name="tidak_boleh_kosong">Field ini tidak boleh kosong</string>
 </resources>
