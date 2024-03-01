@@ -32,4 +32,6 @@ class MoveWithObjectActivity : AppCompatActivity() {
             tvObject.text = text
         }
     }
+
+
 }
