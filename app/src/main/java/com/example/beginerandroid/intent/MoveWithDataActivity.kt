@@ -15,12 +15,12 @@ class MoveWithDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_move_with_data)
 
-        val tvDataReceved: TextView = findViewById(R.id.tv_data_received)
+        val tvDataReceived: TextView = findViewById(R.id.tv_data_received)
 
         val name = intent.getStringExtra(EXTRA_NAME)
         val age = intent.getIntExtra(EXTRA_AGE, 0)
 
         val text = "Name: $name, Your age: $age"
-        tvDataReceved.text = text
+        tvDataReceived.text = text
     }
 }
