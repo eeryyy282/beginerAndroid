@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BeginerAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".viewandviewgroup.LearnViewAndViewGroup"
+            android:exported="false" />
+        <activity
             android:name=".intent.MoveForResultActivity"
             android:exported="false" />
         <activity

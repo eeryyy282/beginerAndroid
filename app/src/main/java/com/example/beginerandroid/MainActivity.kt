@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.example.beginerandroid.intent.LearnIntent
+import com.example.beginerandroid.viewandviewgroup.LearnViewAndViewGroup
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnMoveToIntent: Button = findViewById(R.id.btn_move_activity_to_Intent)
         btnMoveToIntent.setOnClickListener(this)
+
+        val btnMoveToLearnViewAndViewGroup: Button = findViewById(R.id.btn_move_activity_to_learn_view)
+        btnMoveToLearnViewAndViewGroup.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -28,6 +32,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_move_activity_to_Intent -> {
                 val moveToIntent = Intent(this@MainActivity, LearnIntent::class.java)
                 startActivity(moveToIntent)
+            }
+            R.id. btn_move_activity_to_learn_view -> {
+                val moveToLearnView = Intent(this@MainActivity, LearnViewAndViewGroup::class.java)
+                startActivity(moveToLearnView)
             }
         }
     }
