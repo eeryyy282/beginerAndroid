@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        style="@style/TextContent.TitleMedium.Bold.MarginLeftRight"
         android:id="@+id/text_specification"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -16,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        style="@style/TextContent.BodyMedium.Bold"
         android:id="@+id/text_spec_display_title"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
@@ -26,6 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_specification" />
 
     <TextView
+        style="@style/TextContent.BodyMedium.Gray"
         android:id="@+id/text_spec_display"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -36,6 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_specification" />
 
     <TextView
+        style="@style/TextContent.BodyMedium.Bold"
         android:id="@+id/text_spec_size_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -46,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_spec_display" />
 
     <TextView
+        style="@style/TextContent.BodyMedium.Gray"
         android:id="@+id/text_spec_size"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -56,6 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_spec_display" />
 
     <TextView
+        style="@style/TextContent.BodyMedium.Bold"
         android:id="@+id/text_battery_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -66,6 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_spec_size" />
 
     <TextView
+        style="@style/TextContent.BodyMedium.Gray"
         android:id="@+id/text_battery"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

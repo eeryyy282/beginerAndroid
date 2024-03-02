@@ -25,6 +25,7 @@
             app:srcCompat="@drawable/pixel_google" />
 
         <TextView
+            style="@style/TextContent.BodyMedium.White.MarginAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#4D000000"
@@ -43,6 +44,7 @@
             app:drawableLeftCompat="@drawable/ic_collections_white_18dp" />
 
         <TextView
+            style="@style/TextContent.HeadlineMedium.Bold"
             android:id="@+id/text_price"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -54,6 +56,7 @@
             app:layout_constraintTop_toBottomOf="@+id/image_phone" />
 
         <TextView
+            style="@style/TextContent.TitleMedium.Bold.MarginLeftRight"
             android:id="@+id/text_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,6 +91,7 @@
             app:layout_constraintGuide_begin="469dp" />
 
         <include
+            style="@style/TextContent.TitleMedium.Bold.MarginLeftRight"
             android:id="@+id/include"
             layout="@layout/layout_specification"
             android:layout_width="0dp"
