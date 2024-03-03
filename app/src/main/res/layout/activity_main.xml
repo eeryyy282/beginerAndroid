@@ -27,4 +27,11 @@
         android:layout_marginBottom="16dp"
         android:text="@string/learn_view_and_view_group" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_move_to_activity_learn_recycler_view"
+        android:layout_marginBottom="16dp"
+        android:text="@string/learn_recycler_view" />
+
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.example.beginerandroid.intent.LearnIntent
+import com.example.beginerandroid.recyclerview.FirstRecyclerView
 import com.example.beginerandroid.viewandviewgroup.LearnViewAndViewGroup
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -21,6 +22,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnMoveToLearnViewAndViewGroup: Button = findViewById(R.id.btn_move_activity_to_learn_view)
         btnMoveToLearnViewAndViewGroup.setOnClickListener(this)
+
+        val btnMoveToLearnRecyclerView: Button = findViewById(R.id.btn_move_to_activity_learn_recycler_view)
+        btnMoveToLearnRecyclerView.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -36,6 +40,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id. btn_move_activity_to_learn_view -> {
                 val moveToLearnView = Intent(this@MainActivity, LearnViewAndViewGroup::class.java)
                 startActivity(moveToLearnView)
+            }
+            R.id.btn_move_to_activity_learn_recycler_view -> {
+                val moveToRecylerView = Intent(this@MainActivity, FirstRecyclerView::class.java)
+                startActivity(moveToRecylerView)
             }
         }
     }
