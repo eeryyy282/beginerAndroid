@@ -4,55 +4,46 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import com.example.beginerandroid.databinding.LearnActivityBinding
 
 class LearnActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var edtWidth: EditText
-    private lateinit var edtHeight: EditText
-    private lateinit var edtLength: EditText
-    private lateinit var btnCalculate: Button
-    private lateinit var tvResult: TextView
+private lateinit var binding: LearnActivityBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.learn_activity)
-        edtWidth = findViewById(R.id.edt_width)
-        edtHeight = findViewById(R.id.edt_height)
-        edtLength = findViewById(R.id.edt_length)
-        btnCalculate = findViewById(R.id.btn_calculate)
-        tvResult = findViewById(R.id.tv_result)
-        btnCalculate.setOnClickListener(this)
+        binding = LearnActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.btnCalculate.setOnClickListener(this)
 
         if (savedInstanceState != null) {
             val result = savedInstanceState.getString(STATE_RESULT)
-            tvResult.text = result
+            binding.tvResult.text = result
         }
     }
 
     override fun onClick(v: View?) {
         if (v?.id == R.id.btn_calculate) {
-            val inputLength = edtLength.text.toString().trim()
-            val inputHeight = edtHeight.text.toString().trim()
-            val inputWidth = edtWidth.text.toString().trim()
+            val inputLength = binding.edtLength.text.toString().trim()
+            val inputHeight = binding.edtHeight.text.toString().trim()
+            val inputWidth = binding.edtWidth.text.toString().trim()
             var isEmptyFields = false
             var textKosong: String = "Field ini tidak boleh kosong"
             if (inputLength.isEmpty()) {
                 isEmptyFields = true
-                edtLength.error = textKosong
+                binding.edtLength.error = textKosong
             }
             if (inputHeight.isEmpty()) {
                 isEmptyFields = true
-                edtHeight.error = textKosong
+                binding.edtHeight.error = textKosong
             }
             if (inputWidth.isEmpty()) {
                 isEmptyFields = true
-                edtWidth.error = textKosong
+                binding.edtWidth.error = textKosong
             }
             if (!isEmptyFields) {
                 val volume = inputLength.toDouble() * inputHeight.toDouble() * inputWidth.toDouble()
-                tvResult.text = volume.toString()
+                binding.tvResult.text = volume.toString()
             }
         }
     }
@@ -61,6 +52,6 @@ class LearnActivity : AppCompatActivity(), View.OnClickListener {
     }
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
         super.onSaveInstanceState(outState, outPersistentState)
-        outState.putString(STATE_RESULT, tvResult.text.toString())
+        outState.putString(STATE_RESULT, binding.tvResult.text.toString())
     }
 }

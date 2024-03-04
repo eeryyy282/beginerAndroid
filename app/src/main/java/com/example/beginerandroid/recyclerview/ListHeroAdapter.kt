@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beginerandroid.R
+import com.example.beginerandroid.databinding.ItemRowHeroBinding
 
 class ListHeroAdapter(private  val listHero: ArrayList<Hero>): RecyclerView.Adapter<ListHeroAdapter.LIstViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
@@ -15,24 +16,20 @@ class ListHeroAdapter(private  val listHero: ArrayList<Hero>): RecyclerView.Adap
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
-    class LIstViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
-        val tvName: TextView = itemView.findViewById(R.id.tv_item_name)
-        val tvDescription: TextView = itemView.findViewById(R.id.tv_item_description)
-    }
+    class LIstViewHolder(var binding: ItemRowHeroBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LIstViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_row_hero, parent, false)
-        return LIstViewHolder(view)
+        val binding = ItemRowHeroBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return LIstViewHolder(binding)
     }
 
     override fun getItemCount(): Int = listHero.size
 
     override fun onBindViewHolder(holder: LIstViewHolder, position: Int) {
         val (name, description, photo) = listHero[position]
-        holder.imgPhoto.setImageResource(photo)
-        holder.tvName.text = name
-        holder.tvDescription.text = description
+        holder.binding.imgItemPhoto.setImageResource(photo)
+        holder.binding.tvItemName.text = name
+        holder.binding.tvItemDescription.text = description
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listHero[holder.adapterPosition]) }
     }
 
